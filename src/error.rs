@@ -15,7 +15,7 @@ pub enum Error {
     Esp(#[from] EspError),
     #[error("device not found")]
     DeviceNotFound,
-    #[error("invalid family code {{ family_code={0} }}")]
+    #[error("unexpected family code {{ family_code={0}, expected={FAMILY_CODE:x} }}")]
     FamilyCode(u8),
     #[error(
         "unexpected configuration register {{ configuration_register={configuration_register:b}, expected=[{NINE:b}, {TEN:b}, {ELEVEN:b}, {TWELVE:b}] }}"
